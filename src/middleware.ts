@@ -1,13 +1,16 @@
+import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-	if (request.nextUrl.pathname.startsWith('/api')) {
-		const nextGeminiServerKey = request.headers.get('Next-Gemini-Server-Key') ?? '';
-		if (!nextGeminiServerKey || nextGeminiServerKey !== process.env.NEXT_GEMINI_SERVER_KEY) {
-			return Response.json(
-				{ success: false, message: 'Missing Next-Gemini-Server-Key' },
-				{ status: 401 },
-			);
-		}
-	}
+	const response = NextResponse.next();
+
+	response.headers.set('Access-Control-Allow-Origin', '*');
+	response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+	response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Next-Gemini-Server-Key');
+
+	return response;
 }
+
+export const config = {
+	matcher: '/api/:path*',
+};
