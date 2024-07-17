@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"paths": {
+			"~nextApi/*": ["app/api/*"],
+			"~api/*": ["api/*"],
+			"~app-api/*": ["app-api/*"],
+			"~app/*": ["app/*"],
+			"~assets/*": ["assets/*"],
+			"~components/*": ["components/*"],
+			"~constants/*": ["constants/*"],
+			"~helpers/*": ["helpers/*"],
+			"~hooks/*": ["hooks/*"],
+			"~libs/*": ["libs/*"],
+			"~models/*": ["models/*"],
+			"~pages/*": ["pages/*"],
+			"~services/*": ["services/*"],
+			"~store/*": ["store/*"],
+			"~styles/*": ["styles/*"],
+			"~types/*": ["types/*"],
+			"~utils/*": ["utils/*"],
+			"~/*": ["*"]
+		}
+	}
+}

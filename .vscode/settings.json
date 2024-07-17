@@ -1,0 +1,18 @@
+{
+   "editor.formatOnPaste": false,
+   "editor.formatOnSave": true,
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
+   "editor.codeActionsOnSave": {
+      "source.fixAll": "never",
+      "source.fixAll.eslint": "explicit"
+   },
+   "cSpell.language": "uk,en,en-US,lorem",
+   "files.eol": "\n",
+   "runOnSave.commands": [
+      {
+         "match": "\\.(css|s[ac]ss)$",
+         "runIn": "vscode",
+         "commandBeforeSaving": "sort-css-declarations.sort-all"
+      }
+   ]
+}
